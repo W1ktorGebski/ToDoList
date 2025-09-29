@@ -48,9 +48,12 @@
     </Style>
 
     <Style TargetType="Label" x:Key="LabelTask">
-        <Setter Property="BackgroundColor" Value="blue"/>
+        
     </Style>
 
+    <Style TargetType="Label" x:Key="LabelStatus">
+
+    </Style>
 
     <Style TargetType="IndicatorView">
         <Setter Property="IndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}"/>

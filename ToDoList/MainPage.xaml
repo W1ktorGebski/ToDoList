@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.MainPage"
-             BackgroundColor="Grey">
+             BackgroundColor="Grey"
+             Title="">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -35,7 +36,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Tasks"/>
-                        <Label Grid.Row="0" Grid.Column="1" Text="Status"/>
+                        <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Status"/>
 
                         <Label Grid.Row="1" Grid.Column="0" Text="{Binding Task}"/>
                         <CheckBox Grid.Row="1" Grid.Column="1"/>
