@@ -8,6 +8,50 @@
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>
 
+    <Style TargetType="Label" x:Key="ToDoList">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="AddNewTask">
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="WidthRequest" Value="160"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="DeleteTask">
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="WidthRequest" Value="160"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="CollectionView" x:Key="TaskList">
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="TaskDetails">
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="WidthRequest" Value="200"/>
+        <Setter Property="HeightRequest" Value="60"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="LabelTask">
+        <Setter Property="BackgroundColor" Value="blue"/>
+    </Style>
+
+
     <Style TargetType="IndicatorView">
         <Setter Property="IndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}"/>
         <Setter Property="SelectedIndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray100}}"/>
