@@ -14,10 +14,12 @@ namespace ToDoList
         }
         private async void AddNewTask(object sender, EventArgs e)
         {
-           
             await Navigation.PushAsync(new AddTask(Tasks));
+        }
 
-
+        private void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            Tasks.Remove((Task)tasklist.SelectedItem);
         }
     }
 }

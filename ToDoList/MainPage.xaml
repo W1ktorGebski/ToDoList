@@ -16,7 +16,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
+        
         <Label Style="{StaticResource ToDoList}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="To do List"/>
 
         <Button Style="{StaticResource AddNewTask}" Grid.Row="1" Grid.Column="0" Text="Add New task" Clicked="AddNewTask"/>
