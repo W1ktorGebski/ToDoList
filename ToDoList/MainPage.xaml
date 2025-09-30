@@ -19,7 +19,7 @@
 
         <Label Style="{StaticResource ToDoList}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="To do List"/>
 
-        <Button Style="{StaticResource AddNewTask}" Grid.Row="1" Grid.Column="0" Text="Add New task"/>
+        <Button Style="{StaticResource AddNewTask}" Grid.Row="1" Grid.Column="0" Text="Add New task" Clicked="AddNewTask"/>
         <Button Style="{StaticResource DeleteTask}" Grid.Row="1" Grid.Column="1" Text="Delete Task"/>
 
         <CollectionView Style="{StaticResource TaskList}" x:Name="tasklist" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" SelectionMode="Single">
@@ -38,7 +38,7 @@
                         <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Tasks"/>
                         <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Status"/>
 
-                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding Task}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
                         <CheckBox Grid.Row="1" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>

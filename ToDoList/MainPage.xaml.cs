@@ -1,17 +1,23 @@
-﻿namespace ToDoList
+﻿using System.Collections.ObjectModel;
+
+namespace ToDoList
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        public ObservableCollection<Task> Tasks { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
+            Tasks = new ObservableCollection<Task>();
+            BindingContext = this;
         }
-
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private async void AddNewTask(object sender, EventArgs e)
         {
            
+            await Navigation.PushAsync(new AddTask(Tasks));
+
+
         }
     }
 }
