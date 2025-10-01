@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.MainPage"
@@ -20,9 +20,9 @@
         <Label Style="{StaticResource ToDoList}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="To do List"/>
 
         <Button Style="{StaticResource AddNewTask}" Grid.Row="1" Grid.Column="0" Text="Add New task" Clicked="AddNewTask"/>
-        <Button Style="{StaticResource DeleteTask}" Grid.Row="1" Grid.Column="1" Text="Delete Task"/>
+        <Button Style="{StaticResource DeleteTask}" Grid.Row="1" Grid.Column="1" Text="Delete Task" Clicked="DeleteButton_Clicked"/>
 
-        <CollectionView Style="{StaticResource TaskList}" x:Name="tasklist" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" SelectionMode="Single">
+        <CollectionView Style="{StaticResource TaskList}" x:Name="tasklist" Grid.Row="2" ItemsSource="{Binding Tasks}" Grid.Column="0" Grid.ColumnSpan="2" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -34,12 +34,23 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-
+                        
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="lightgray" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        
                         <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Tasks"/>
                         <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Status"/>
 
-                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
-                        <CheckBox Grid.Row="1" Grid.Column="1"/>
+                        <Label Style="{StaticResource LabelTaskProgres}" Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
+                        <CheckBox Style="{StaticResource CheckBox}" Grid.Row="1" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
