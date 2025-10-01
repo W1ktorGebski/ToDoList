@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -48,13 +48,48 @@
     </Style>
 
     <Style TargetType="Label" x:Key="LabelTask">
-        
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="25"/>
     </Style>
 
     <Style TargetType="Label" x:Key="LabelStatus">
-
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="25"/>
     </Style>
 
+    <Style TargetType="Label" x:Key="LabelTaskProgres">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="CheckBox" x:Key="CheckBox">
+        
+        <Setter Property="Color" Value="White"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="EntryTask">
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+    
+    <Style TargetType="Button" x:Key="ButtonDodaj">
+        <Setter Property="BackgroundColor" Value="Green"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="WidthRequest" Value="200"/>
+        <Setter Property="HeightRequest" Value="60"/>
+        <Setter Property="FontSize" Value="20"/>
+
+    </Style>
+    
     <Style TargetType="IndicatorView">
         <Setter Property="IndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}"/>
         <Setter Property="SelectedIndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray100}}"/>
