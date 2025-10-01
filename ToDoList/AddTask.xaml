@@ -2,9 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.AddTask"
-             Title="AddTask">
-    <VerticalStackLayout>
-        <Entry x:Name="EntryTask" />
-        <Button Text="dodaj" Clicked="AddButton_Clicked"/>
-    </VerticalStackLayout>
+             BackgroundColor="Grey"
+             Title="">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Entry Style="{StaticResource EntryTask}" x:Name="EntryTask" Grid.Row="0" Placeholder="Wpisz nazwe zadania"/>
+        <Entry Style="{StaticResource EntryTask}" x:Name="EntryOpis" Grid.Row="1" Placeholder="Wpisz opis zadania"/>
+        <Button Style="{StaticResource ButtonDodaj}" Text="dodaj" Clicked="AddButton_Clicked" Grid.Row="3"/>
+        
+    </Grid>
+ 
+
 </ContentPage>
