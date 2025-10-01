@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 
 namespace ToDoList
 {
@@ -19,7 +19,12 @@ namespace ToDoList
 
         private void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            Tasks.Remove((Task)tasklist.SelectedItem);
+            var selectedItem = tasklist.SelectedItem as Task;
+            if (selectedItem != null)
+            {
+                Tasks.Remove(selectedItem);
+                tasklist.SelectedItem = null;
+            }
         }
     }
 }
