@@ -46,8 +46,8 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         
-                        <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Tasks"/>
-                        <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Status"/>
+                        <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
+                        <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Task Status:"/>
 
                         <Label Style="{StaticResource LabelTaskProgres}" Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
                         <CheckBox Style="{StaticResource CheckBox}" Grid.Row="1" Grid.Column="1"/>
