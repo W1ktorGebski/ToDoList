@@ -13,10 +13,11 @@ public partial class AddTask : ContentPage
 
     private async void AddButton_Clicked(object sender, EventArgs e)
     {
+        var description = EntryOpis.Text;
         var text = EntryTask.Text;
         if (!string.IsNullOrWhiteSpace(text))
         {
-            _Tasks.Add(new Task { Name = text});
+            _Tasks.Add(new Task { Name = text, Description = description });
             await Navigation.PopAsync();
         }
     }

@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
         <Entry Style="{StaticResource EntryTask}" x:Name="EntryTask" Grid.Row="0" Placeholder="Wpisz nazwe zadania"/>
         <Entry Style="{StaticResource EntryTask}" x:Name="EntryOpis" Grid.Row="1" Placeholder="Wpisz opis zadania"/>
-        <Button Style="{StaticResource ButtonDodaj}" Text="dodaj" Clicked="AddButton_Clicked" Grid.Row="3"/>
+        <Button Style="{StaticResource ButtonDodaj}" Text="Dodaj" Clicked="AddButton_Clicked" Grid.Row="3"/>
         
     </Grid>
  

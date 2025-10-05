@@ -17,13 +17,45 @@ namespace ToDoList
             await Navigation.PushAsync(new AddTask(Tasks));
         }
 
-        private void DeleteButton_Clicked(object sender, EventArgs e)
+        private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
             var selectedItem = tasklist.SelectedItem as Task;
             if (selectedItem != null)
             {
-                Tasks.Remove(selectedItem);
-                tasklist.SelectedItem = null;
+                bool canDelete = true;
+
+                if (!selectedItem.IsCompleted)
+                {
+                    bool confirm = await DisplayAlert(
+                        "Zadanie nie wykonane",
+                        "Zadanie nie jest wykonane, czy na pewno chcesz je usun¹æ?",
+                        "Tak", "Nie");
+
+                    canDelete = confirm;
+                }
+
+                if (canDelete)
+                {
+                    Tasks.Remove(selectedItem);
+                    tasklist.SelectedItem = null;
+                }
+            }
+            else
+            {
+                await DisplayAlert("Uwaga", "Najpierw wybierz zadanie do usuniêcia.", "OK");
+            }
+        }
+
+        private async void ShowDetails_Clicked(object sender, EventArgs e)
+        {
+            var selectedItem = tasklist.SelectedItem as Task;
+            if (selectedItem != null)
+            {
+                await Navigation.PushAsync(new TaskDetails(selectedItem));
+            }
+            else
+            {
+                await DisplayAlert("Uwaga", "Wybierz zadanie z listy, aby zobaczyæ szczegó³y.", "OK");
             }
         }
     }

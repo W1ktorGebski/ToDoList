@@ -19,8 +19,8 @@
         
         <Label Style="{StaticResource ToDoList}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="To do List"/>
 
-        <Button Style="{StaticResource AddNewTask}" Grid.Row="1" Grid.Column="0" Text="Add New task" Clicked="AddNewTask"/>
-        <Button Style="{StaticResource DeleteTask}" Grid.Row="1" Grid.Column="1" Text="Delete Task" Clicked="DeleteButton_Clicked"/>
+        <Button Style="{StaticResource AddNewTask}" Grid.Row="1" Grid.Column="0" Text="Dodaj nowe zadanie" Clicked="AddNewTask"/>
+        <Button Style="{StaticResource DeleteTask}" Grid.Row="1" Grid.Column="1" Text="Usuń zadanie" Clicked="DeleteButton_Clicked"/>
 
         <CollectionView Style="{StaticResource TaskList}" x:Name="tasklist" Grid.Row="2" ItemsSource="{Binding Tasks}" Grid.Column="0" Grid.ColumnSpan="2" SelectionMode="Single">
             <CollectionView.ItemTemplate>
@@ -46,17 +46,17 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         
-                        <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
-                        <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Task Status:"/>
+                        <Label Style="{StaticResource LabelTask}" Grid.Row="0" Grid.Column="0" Text="Nazwa:"/>
+                        <Label Style="{StaticResource LabelStatus}"  Grid.Row="0" Grid.Column="1" Text="Status:"/>
 
                         <Label Style="{StaticResource LabelTaskProgres}" Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
-                        <CheckBox Style="{StaticResource CheckBox}" Grid.Row="1" Grid.Column="1"/>
+                        <CheckBox Style="{StaticResource CheckBox}" Grid.Row="1" Grid.Column="1"  IsChecked="{Binding IsCompleted, Mode=TwoWay}"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Button Style="{StaticResource TaskDetails}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Show task details"/>
+        <Button Style="{StaticResource TaskDetails}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Szczegóły zadania" Clicked="ShowDetails_Clicked"/>
     </Grid>
 
 </ContentPage>
