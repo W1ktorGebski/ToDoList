@@ -3,15 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.TaskDetails"
              BackgroundColor="Grey"
-             Title="Task Details">
+             Title="">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-            <Label  Style="{StaticResource TaskDetailsLabel}" Text="Nazwa zadania:"/>
-            <Label  Style="{StaticResource TaskDetailsName}" x:Name="TaskNameLabel"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Label  Style="{StaticResource TaskDetailsLabel}" Grid.Row="0" Text="Nazwa zadania:"/>
+        <Label  Style="{StaticResource TaskDetailsName}" Grid.Row="1" x:Name="TaskNameLabel"/>
 
-            <Label Style="{StaticResource TaskDetailsLabel}" Text="Opis zadania:"/>
-            <Label Style="{StaticResource TaskDetailsDescription}" x:Name="TaskDescriptionLabel"/>
-        </VerticalStackLayout>
-    </ScrollView>
+        <Label Style="{StaticResource TaskDetailsLabel}" Grid.Row="2" Text="Opis zadania:"/>
+        <Label Style="{StaticResource TaskDetailsDescription}" Grid.Row="3" x:Name="TaskDescriptionLabel"/>
+    </Grid>
 </ContentPage>
